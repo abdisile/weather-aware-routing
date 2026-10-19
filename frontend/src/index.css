@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+}
+
+:root {
+  color-scheme: light;
+  --background: #f3f5f8;
+  --foreground: #16181d;
+  --card: #ffffff;
+  --card-foreground: #16181d;
+  --muted: #f4f6f9;
+  --muted-foreground: #5c6570;
+  --border: #e4e7ee;
+  --input: #d8dce6;
+  --primary: #1f4fd8;
+  --primary-foreground: #ffffff;
+  --ring: #1f4fd8;
+  --accent: #f4f7ff;
+  --accent-foreground: #1f4fd8;
+  --destructive: #b42318;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" on, "cv11" on;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+.map-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.map-wrap .maplibregl-map {
+  position: absolute;
+  inset: 0;
+}
+
+.map-wrap .maplibregl-popup-content {
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #16181d;
+  border: 1px solid #e4e7ee;
+  border-radius: 0;
+  box-shadow: none;
+  font: 13px/1.45 "Instrument Sans", ui-sans-serif, sans-serif;
+}
+
+.map-wrap .maplibregl-popup-tip {
+  display: none;
+}
+
+.map-wrap .popup strong,
+.map-wrap .popup div {
+  display: block;
+}
+
+.map-wrap .popup-readings {
+  margin-top: 6px;
+  color: #5c6570;
+}
+
+.map-wrap .maplibregl-ctrl-group {
+  border: 1px solid #e4e7ee !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+.map-wrap .maplibregl-ctrl-group button {
+  width: 32px;
+  height: 32px;
+  border-radius: 0 !important;
+}
+
+.map-wrap .maplibregl-ctrl-bottom-right,
+.map-wrap .maplibregl-ctrl-bottom-left {
+  bottom: 176px;
+}
